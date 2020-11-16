@@ -1,0 +1,36 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Login</h2>
+    <div class="jumbotran">
+
+        <form [formGroup]="LoginForm" (ngSubmit)="doLogin()">
+            <div > 
+             <label for="email"><b>Email</b></label><br>
+             <input type="text" placeholder="Enter Email" name="email" id="email" required> 
+            
+             <div *ngIf="!loginForm.get('UserName')?.valid && (loginForm.get('UserName')?.dirty 
+             || loginForm.get('UserName')?.touched)" class="error">
+       <div *ngIf="loginForm.get('UserName').errors.required" >
+        <small class="text-danger">User Name is required</small> 
+       </div>
+       <div *ngIf="loginForm.get('UserName').errors.email">
+           <small class="text-danger">invalid User Name</small>
+       </div>
+     </div>
+            </div><br>
+            <div>
+                <label for="Password"><b>Password</b></label><br>
+                 <input type="Password" placeholder="Enter password" name="psw" id="psw" required>
+            </div>  <br>
+             <button class="btn btn-danger" type="Sign in">Sign in</button>&nbsp;&nbsp;
+             <button class="btn btn-danger" type="Cancel">Reset</button><br><br>
+             <input type="checkbox" checked="checked">Remember me<br><br>
+             <a href="#!/New User?Register" class="btn btn-link">New User? Register</a><br><br>
+             <a href="#!/Forgot Password" class="btn btn-link">Forgot Password</a>
+        </form>
+    </div>
+</div>
+
+<h2 class="text text-danger">{{err}}</h2>
+
+
+ 
