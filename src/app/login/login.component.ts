@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
        //  localStorage.setItem('email',this.mailid.value)
        sessionStorage.setItem('User Name',this.UserName.value)
     }
-      else if(this.UserName.value=="HarikaKaja" && this.Password.value=="123")
+      else if(this.UserName.value=="Sandy" && this.Password.value=="123")
        {
-            this.router.navigate(['Booking']);
+            this.router.navigate(['Home']);
           
             sessionStorage.setItem('User Name',this.UserName.value)
        }
@@ -55,3 +55,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
